@@ -9,11 +9,11 @@ setup_dns_env_var() {
 
 inject_env_vars() {
 	## Replace only specified environment variables in specified file.
-	envsubst '${DNS_SERVER},${INDEX_FILE}' < $1 > output.conf
-	cp output.conf $1
-	echo "This is $1: " && cat $1
+	envsubst '${DNS_SERVER},${INDEX_FILE}' < ${NGINX_CONFIGURATION_PATH}/$1 > output.conf
+	cp output.conf ${NGINX_CONFIGURATION_PATH}/$1
+	echo "This is $1: " && cat ${NGINX_CONFIGURATION_PATH}/$1
 }
 
 export INDEX_FILE=index2.html
 setup_dns_env_var
-inject_env_vars "nginx.conf"
+inject_env_vars "default.conf"
