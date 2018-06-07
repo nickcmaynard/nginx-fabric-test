@@ -16,4 +16,4 @@ inject_env_vars() {
 
 export INDEX_FILE=index2.html
 setup_dns_env_var
-inject_env_vars "default.conf"
+inject_env_vars "resolver.conf"
